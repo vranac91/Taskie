@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Taskie</string>
+    <string name="newTaskHeadingText">New task:</string>
+    <string name="newTaskTitleInputHint">Enter task title</string>
+    <string name="newTaskDescriptionInputHint">Enter task description</string>
+    <string name="lowPriority">Low</string>
+    <string name="mediumPriority">Medium</string>
+    <string name="highPriority">High</string>
+    <string name="saveTaskActionText">Save</string>
+    <string name="emptyFields">Check your inputs</string>
+    <string name="noTaskFound">No such task found</string>
+    <string name="no_data">No data! :(</string>
+    <string name="taskListText">Task List</string>
+    <string name="aboutText">About</string>
+    <string name="aboutAuthor">Author</string>
+    <string name="aboutApp">App</string>
+    <string name="aboutAppText">Taskie app helps you get your things done!\n\nUse the plus button to add a new task, select
+    the name, description and one of 3 available priorities.\n\nClicking on any task after it has been created shows the
+    description and priority information.\n\nHave fun!</string>
+    <string name="aboutAuthorText">Made for Android Dev Academy by dvranjicic</string>
+    <string name="authorGithubText"><a href="https://github.com/vranac91">Github</a></string>
+</resources>
