@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/removeTasksItem"
+            android:title="@string/removeTasksMenuItem"
+            app:showAsAction="never"/>
+
+    <item
+            android:id="@+id/sortByPriorityItem"
+            android:title="@string/sortByPriorityMenuItem"
+            app:showAsAction="never"/>
+</menu>

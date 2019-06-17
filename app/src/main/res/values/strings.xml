@@ -19,4 +19,11 @@
     description and priority information.\n\nHave fun!</string>
     <string name="aboutAuthorText">Made for Android Dev Academy by dvranjicic</string>
     <string name="authorGithubText"><a href="https://github.com/vranac91">Github</a></string>
+    <string name="editButtonText">Edit</string>
+    <string name="editTaskHeadingText">Edit task:</string>
+    <string name="removeTasksMenuItem">Remove All Tasks</string>
+    <string name="removeTasksAlertText">This will remove all tasks. Are you sure?</string>
+    <string name="sortByPriorityMenuItem">Sort By Priority</string>
+    <string name="taskListTitle">Task List</string>
+    <string name="aboutTitle">About</string>
 </resources>

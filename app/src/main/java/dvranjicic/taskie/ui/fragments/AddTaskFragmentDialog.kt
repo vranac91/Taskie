@@ -12,13 +12,15 @@ import dvranjicic.taskie.R
 import dvranjicic.taskie.common.displayToast
 import dvranjicic.taskie.model.Priority
 import dvranjicic.taskie.model.Task
-import dvranjicic.taskie.persistence.Repository
+import dvranjicic.taskie.persistence.TaskPrefs
+import dvranjicic.taskie.persistence.TasksRoomRepository
 import kotlinx.android.synthetic.main.fragment_dialog_new_task.*
 
 class AddTaskFragmentDialog : DialogFragment() {
 
     private var taskAddedListener: TaskAddedListener? = null
-    private val repository = Repository
+    private val repository = TasksRoomRepository()
+    private val currentPriority = TaskPrefs.getPriority(TaskPrefs.KEY_PRIORITY_NAME, 0)
 
     interface TaskAddedListener {
         fun onTaskAdded(task: Task)
@@ -54,7 +56,7 @@ class AddTaskFragmentDialog : DialogFragment() {
                 it,
                 android.R.layout.simple_spinner_dropdown_item,
                 Priority.values())
-            prioritySelector.setSelection(0)
+            prioritySelector.setSelection(currentPriority)
         }
     }
 
@@ -71,7 +73,14 @@ class AddTaskFragmentDialog : DialogFragment() {
         val title = newTaskTitleInput.text.toString()
         val description = newTaskDescriptionInput.text.toString()
         val priority = prioritySelector.selectedItem as Priority
-        val task = repository.save(title, description, priority)
+
+        TaskPrefs.store(TaskPrefs.KEY_PRIORITY_NAME, prioritySelector.selectedItemPosition)
+
+        val task = repository.addTask(Task(
+            title = title,
+            description = description,
+            priority = priority
+        ))
 
         clearUi()
 
@@ -82,7 +91,7 @@ class AddTaskFragmentDialog : DialogFragment() {
     private fun clearUi() {
         newTaskTitleInput.text.clear()
         newTaskDescriptionInput.text.clear()
-        prioritySelector.setSelection(0)
+        prioritySelector.setSelection(currentPriority)
     }
 
     private fun isInputEmpty() = isEmpty(newTaskTitleInput.text) || isEmpty(newTaskDescriptionInput.text)

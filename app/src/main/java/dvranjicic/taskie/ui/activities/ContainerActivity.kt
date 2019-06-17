@@ -10,9 +10,8 @@ class ContainerActivity : BaseActivity() {
     override fun getLayoutResourceId() = R.layout.activity_main
 
     override fun setUpUi() {
-        super.setUpUi()
         val screenType = intent.getStringExtra(EXTRA_SCREEN_TYPE)
-        val id = intent.getIntExtra(EXTRA_TASK_ID, -1)
+        val id = intent.getLongExtra(EXTRA_TASK_ID, -1)
         if (screenType.isNotEmpty()) {
             when (screenType) {
                 SCREEN_TASK_DETAILS -> showFragment(TaskDetailsFragment.newInstance(id))
